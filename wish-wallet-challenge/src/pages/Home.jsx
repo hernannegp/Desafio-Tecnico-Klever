@@ -9,7 +9,9 @@ const Home = () => {
   const history = useNavigate();
   function handleClick() {
     history('/addToken');
-}
+  }
+  const tokens = JSON.parse(localStorage.getItem('tokens'));
+  const balances = JSON.parse(localStorage.getItem('balances'));
   return (
     <HomeStyle>
       <div className='content'>
@@ -21,15 +23,15 @@ const Home = () => {
         <div className='token-and-balance'>
           <ul className='token-values'>
             <p>Tokens</p>
-            <h1><img className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>KLV</h1>
-            <h1><img className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>DVK</h1>
-            <h1><img className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>KFI</h1>
+            { tokens.map((token, index) => (
+              <h1 key={index}><img className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
+            )) }
           </ul>
           <ul>
             <p>Balance</p>
-            <h1 className='value'>10,250.50</h1>
-            <h1 className='value'>50,250.71</h1>
-            <h1 className='value'>10</h1>
+            { balances.map((balance, index) => (
+              <h1 key={index} className='value'>{balance}</h1>
+            )) }
           </ul>
         </div>
       </div>
