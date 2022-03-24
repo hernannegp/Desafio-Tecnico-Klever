@@ -1,8 +1,9 @@
 import React from 'react'
+import Token from '../components/Token';
 
 const AddToken = () => {
   return (
-    <div>Teste</div>
+    <Token />
   )
 }
 
