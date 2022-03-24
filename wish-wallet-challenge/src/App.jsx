@@ -1,7 +1,18 @@
-function App() {
+import GlobalStyle from './styles/GlobalStyle'
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AddToken from './pages/AddToken';
+import EditToken from './pages/EditToken';
+
+const App = () => {
   return (
     <div>
-      <h1>Teste</h1>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='addToken' element={<AddToken />}/>
+        <Route path='editToken' element={<EditToken />}/>
+      </Routes>
+      <GlobalStyle />
     </div>
   );
 }
