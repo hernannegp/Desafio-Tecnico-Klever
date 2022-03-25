@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const TokenStyle = styled.div`
   text-align: center;
   margin-top: 50px;
-  
 
   .wish-wallet-title {
     font-weight: bolder;

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const history = useNavigate();
-  function handleClick() {
+  const handleClick = () => {
     history('/addToken');
   }
   const tokens = JSON.parse(localStorage.getItem('tokens'));
@@ -23,15 +23,15 @@ const Home = () => {
         <div className='token-and-balance'>
           <ul className='token-values'>
             <p>Tokens</p>
-            { tokens.map((token, index) => (
-              <h1 key={index}><img className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
-            )) }
+            { tokens === null ? <></> : tokens.map((token, index) => (
+              <h1 key={index}><img onClick={ () => history(`/editToken/${index}`) } className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
+            ))}
           </ul>
           <ul>
             <p>Balance</p>
-            { balances.map((balance, index) => (
+            { balances === null ? <></> : balances.map((balance, index) => (
               <h1 key={index} className='value'>{balance}</h1>
-            )) }
+            ))}
           </ul>
         </div>
       </div>
