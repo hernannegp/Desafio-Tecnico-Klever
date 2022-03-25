@@ -49,6 +49,14 @@ const Token = () => {
     history('/')
   }
 
+  const removeClickButton = () => {
+    myTokenFromLocalStorage.splice(id, 1);
+    myBalanceFromLocalStorage.splice(id, 1);
+    localStorage.setItem('tokens', JSON.stringify(myTokenFromLocalStorage))
+    localStorage.setItem('balances', JSON.stringify(myBalanceFromLocalStorage))
+    history('/');
+  }
+
   return (
     <TokenStyle>
       <img width="175px" src={ kleverLogo } alt="logo-klever"/>
@@ -69,7 +77,8 @@ const Token = () => {
           </label>
         </div>
           {
-            pathname === '/addToken' ? null : <button className='remove-button'>Remove</button>
+            pathname === '/addToken' ? null : 
+              <button onClick={ removeClickButton } className='remove-button'>Remove</button>
           }
           <button onClick={(e) => handleSaveClick(e)} className='save-button'>Save</button>
           { isVisible === true ? <h1>Preencha os campos corretamente</h1> : null }
