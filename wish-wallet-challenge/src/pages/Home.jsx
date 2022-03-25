@@ -15,9 +15,9 @@ const Home = () => {
   return (
     <HomeStyle>
       <div className='content'>
-        <img width="175px" src={ kleverLogo } alt="logo-klever"/>
+        <img data-testid='klever-logo' width="175px" src={ kleverLogo } alt="logo-klever"/>
         <div className='wish-wallet-container'>
-          <h2 className='wish-wallet-title'><img className='wish-wallet-logo' width='60px' src={ wishWalletLogo } alt="logo-wish-wallet"/>Wish Wallet</h2>
+          <h2 className='wish-wallet-title'><img data-testid='img-wish-wallet' className='wish-wallet-logo' width='60px' src={ wishWalletLogo } alt="logo-wish-wallet"/>Wish Wallet</h2>
           <button onClick={ handleClick } className='button-wish-wallet'>Add Token</button>
         </div>
         <div className='token-and-balance'>
