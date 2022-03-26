@@ -66,7 +66,7 @@ const Token = () => {
         </div>
         <div className='inputs-container'>
           <label htmlFor='inputToken'>
-            <p className='token-p'>Token</p>
+            <p id='test' className='token-p'>Token</p>
             <input 
               placeholder={ pathname === '/addToken' ? '' : myTokenFromLocalStorage[id] } 
               onChange={(e) => setTokenInput(e.target.value)} 
