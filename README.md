@@ -51,18 +51,25 @@ Quando você rodar a aplicação pela primeira vez, verá que nenhum token estar
 
 Passo 1: 
   * Clique no botão 'Code' presente neste repositório, na opção 'HTTPS' copie o link!!
+
 Passo 2: 
   * Abra o terminal no seu computador!!
+
 Passo 3: 
   * Navegue ate a pasta onde deseja guardar armazenar esta aplicação!!
+
 Passo 4: 
   * Digite em seu terminal `git clone linkQueVoceCopiou!!!`
+
 Passo 5: 
   * Digite em seu terminal `cd wish-wallet-challenge`
+
 Passo 6: 
   * Digite em seu terminal `npm install`
+
 Passo 7: 
   * Digite em seu terminal após ter instalado todas as dependencias `npm start`
+
 
 # Testes
 
