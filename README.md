@@ -4,7 +4,7 @@
 - [Requisitos](#requisitos)
 - [Funcionalidades](#funcionalidades)
 - [Aplicação](#aplicação)
-- [Instalação](#instação)
+- [Instalação](#instalação)
 - [Testes](#testes)
 - [Autor](#autor)
 
