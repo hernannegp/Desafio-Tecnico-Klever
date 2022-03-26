@@ -73,7 +73,7 @@ const Token = () => {
               placeholder={ pathname === '/addToken' ? '' : myTokenFromLocalStorage[id] } 
               onChange={(e) => setTokenInput(e.target.value)} 
               className='inputText' 
-              type='text' 
+              type='text'
               name='inputToken'
               data-testid='inputToken'
             />
@@ -84,7 +84,7 @@ const Token = () => {
               placeholder={ pathname === '/addToken' ? '' : myBalanceFromLocalStorage[id] } 
               onChange={(e) => setBalanceInput(e.target.value)} 
               className='inputText' 
-              type='number' 
+              type='number'
               name='balanceToken'
               data-testid='inputBalance'
             />
@@ -92,7 +92,7 @@ const Token = () => {
         </div>
           {
             pathname === '/addToken' ? null : 
-              <button onClick={ removeClickButton } className='remove-button'>Remove</button>
+              <button data-testid='removeButton' onClick={ removeClickButton } className='remove-button'>Remove</button>
           }
           <button onClick={(e) => handleSaveClick(e)} className='save-button'>Save</button>
           { isVisible === true ? <h1>Preencha os campos corretamente</h1> : null }

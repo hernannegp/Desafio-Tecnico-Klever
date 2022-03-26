@@ -23,13 +23,13 @@ const Home = () => {
         <div className='token-and-balance'>
           <ul className='token-values'>
             <p>Tokens</p>
-            { tokens === null ? <></> : tokens.map((token, index) => (
-              <h1 data-testid='token' key={index}><img onClick={ () => history(`/editToken/${index}`) } className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
+            { tokens === null || tokens.length === 0 ? <p data-testid='emptyToken'></p> : tokens.map((token, index) => (
+              <h1 data-testid='token' key={index}><img data-testid='editButton' onClick={ () => history(`/editToken/${index}`) } className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
             ))}
           </ul>
           <ul>
             <p>Balance</p>
-            { balances === null ? <></> : balances.map((balance, index) => (
+            { balances === null || balances.length === 0 ? <p data-testid='emptyBalance'></p> : balances.map((balance, index) => (
               <h1 key={index} className='value'>{balance}</h1>
             ))}
           </ul>
