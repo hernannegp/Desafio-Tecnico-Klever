@@ -24,7 +24,7 @@ const Home = () => {
           <ul className='token-values'>
             <p>Tokens</p>
             { tokens === null ? <></> : tokens.map((token, index) => (
-              <h1 key={index}><img onClick={ () => history(`/editToken/${index}`) } className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
+              <h1 data-testid='token' key={index}><img onClick={ () => history(`/editToken/${index}`) } className='edit-logo' width='20px' src={editLogo} alt="edit-logo"/>{token}</h1>
             ))}
           </ul>
           <ul>

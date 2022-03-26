@@ -40,7 +40,7 @@ const Token = () => {
       localStorage.setItem('balances', JSON.stringify(myBalanceFromLocalStorage))
       history('/');
     }
-    if (!tokenInput && !balanceInput) {
+    if (!tokenInput || !balanceInput) {
       setIsVisible(true)
     }
   }
@@ -59,8 +59,8 @@ const Token = () => {
 
   return (
     <TokenStyle>
-      <img width="175px" src={ kleverLogo } alt="logo-klever"/>
-      <h2 className='wish-wallet-title'><img className='wish-wallet-logo' width='60px' src={ wishWalletLogo } alt="logo-wish-wallet"/>Wish Wallet</h2>
+      <img data-testid='klever-logo' width="175px" src={ kleverLogo } alt="logo-klever"/>
+      <h2 className='wish-wallet-title'><img data-testid='img-wish-wallet' className='wish-wallet-logo' width='60px' src={ wishWalletLogo } alt="logo-wish-wallet"/>Wish Wallet</h2>
       <form>
         <div className='addToken-title-and-button'>
           { pathname === '/addToken' ? <h2 className='addToken-title'>Add Token</h2> : <h2 className='addToken-title'>Edit Token</h2> }
@@ -69,11 +69,25 @@ const Token = () => {
         <div className='inputs-container'>
           <label htmlFor='inputToken'>
             <p className='token-p'>Token</p>
-            <input placeholder={ pathname === '/addToken' ? '' : myTokenFromLocalStorage[id] } onChange={(e) => setTokenInput(e.target.value)} className='inputText' type='text' name='inputToken'/>
+            <input 
+              placeholder={ pathname === '/addToken' ? '' : myTokenFromLocalStorage[id] } 
+              onChange={(e) => setTokenInput(e.target.value)} 
+              className='inputText' 
+              type='text' 
+              name='inputToken'
+              data-testid='inputToken'
+            />
           </label>
           <label htmlFor='balanceToken'>
             <p className='balance-p'>Balance</p>
-            <input placeholder={ pathname === '/addToken' ? '' : myBalanceFromLocalStorage[id] } onChange={(e) => setBalanceInput(e.target.value)} className='inputText' type='number' name='balanceToken'/>
+            <input
+              placeholder={ pathname === '/addToken' ? '' : myBalanceFromLocalStorage[id] } 
+              onChange={(e) => setBalanceInput(e.target.value)} 
+              className='inputText' 
+              type='number' 
+              name='balanceToken'
+              data-testid='inputBalance'
+            />
           </label>
         </div>
           {
