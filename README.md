@@ -76,7 +76,7 @@ Passo 7:
 Para garantir que tudo esta funcionando, foram criados testes unitarios, rode eles digitando o seguinte comando em seu terminal `npm test`
 * Certifique de estar dentro da pasta wish-wallet-challenge 
 
-#Atenção sobre os testes
+# Atenção sobre os testes
 
 * Ao rodar os testes pode aparecer uma mensagem de erro em seu terminal, fora isso, todos os testes estão passando e de nada essa mensagem afeta a aplicação
 
