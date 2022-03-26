@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import kleverLogo from '../images/logo.svg'
 import wishWalletLogo from '../images/shooting-star.png'
 import editLogo from '../images/edit-logo.png'
@@ -10,6 +10,16 @@ const Home = () => {
   const handleClick = () => {
     history('/addToken');
   }
+
+  useEffect(() => {
+    if (localStorage.getItem('tokens') === null) {
+      localStorage.setItem('tokens', '[]');
+    }
+    if (localStorage.getItem('balances') === null) {
+      localStorage.setItem('balances', '[]');
+    }
+  }, [])
+
   const tokens = JSON.parse(localStorage.getItem('tokens'));
   const balances = JSON.parse(localStorage.getItem('balances'));
   return (

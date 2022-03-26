@@ -17,13 +17,7 @@ const Token = () => {
 
   const handleSaveClick = (e) => {
     e.preventDefault();
-    if (localStorage.getItem('tokens') === null) {
-      localStorage.setItem('tokens', '[]');
-    }
-    if (localStorage.getItem('balances') === null) {
-      localStorage.setItem('balances', '[]');
-    }
-    if (tokenInput.length > 0 && balanceInput.length > 0 && pathname === '/addToken') {
+    if (tokenInput.length > 0 && balanceInput.length > 0 && pathname === '/addToken' && myTokenFromLocalStorage.includes(tokenInput) !== true) {
       const myBalances = JSON.parse(localStorage.getItem('balances'));
       const myTokens = JSON.parse(localStorage.getItem('tokens'));
       myBalances.push(balanceInput);
@@ -39,6 +33,10 @@ const Token = () => {
       localStorage.setItem('tokens', JSON.stringify(myTokenFromLocalStorage))
       localStorage.setItem('balances', JSON.stringify(myBalanceFromLocalStorage))
       history('/');
+    }
+    if (pathname === '/addToken' && myTokenFromLocalStorage.includes(tokenInput)) {
+      alert('Não aceitamos valores repetidos')
+      return false;
     }
     if (!tokenInput || !balanceInput) {
       setIsVisible(true)
